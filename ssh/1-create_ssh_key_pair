@@ -4,7 +4,7 @@
 # The private key will be named "school", and it will be protected with the passphrase "betty".
 
 # Run ssh-keygen to generate the key pair with the appropriate options.
-ssh-keygen -t rsa -b 4096 -f ~/school -N "betty" -C "vagrant@ubuntu"
+ssh-keygen -t rsa -b 4096 -f home/.ssh/school -N "betty" -C "vagrant@ubuntu"
 
 # Output the generated key pair's location.
 echo "The private key is stored in: ~/school"
