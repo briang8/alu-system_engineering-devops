@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Create an RSA key pair with the specified requirements.
 # The private key will be named "school", and it will be protected with the passphrase "betty".
