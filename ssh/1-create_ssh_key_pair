@@ -1,6 +1,12 @@
-#!/usr/bin/env bash
-# Write a Bash script that creates an RSA key pair.
-# Requirements: Name of the created private key must be school
-# Number of bits in the created key to be created 4096
-# The created key must be protected by the passphrase betty
-ssh-keygen -b 4096 -t rsa -f ./school -N betty
+#!/bin/bash
+
+# Create an RSA key pair with the specified requirements.
+# The private key will be named "school", and it will be protected with the passphrase "betty".
+
+# Run ssh-keygen to generate the key pair with the appropriate options.
+ssh-keygen -t rsa -b 4096 -f ~/school -N "betty" -C "vagrant@ubuntu"
+
+# Output the generated key pair's location.
+echo "The private key is stored in: ~/school"
+echo "The public key is stored in: ~/school.pub"
+
