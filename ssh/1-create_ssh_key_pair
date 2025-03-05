@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 # a Bash script that uses ssh to connect to your server using the private key ~/.ssh/school with the user ubuntu
-ssh-keygen -t rsa -b 4096 -f /home/briang/.ssh/school -N "betty" -C "vagrant@ubuntu"
+ssh-keygen -t rsa -b 4096 -f ./school -N "betty" -C "vagrant@ubuntu"
 
