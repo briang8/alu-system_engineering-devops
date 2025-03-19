@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Write a Bash script that transfers a file from our client to a server:
+# a Bash script that transfers a file from our client to a server:
 declare -i ARGS="$#"
 if [ "$ARGS" -lt 4 ];
 then
