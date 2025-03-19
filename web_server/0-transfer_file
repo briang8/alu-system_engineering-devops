@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-
 # Debugging output
 echo "Arguments: $1 $2 $3 $4"
 
