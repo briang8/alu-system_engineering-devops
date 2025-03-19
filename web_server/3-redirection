@@ -1,14 +1,17 @@
 #!/usr/bin/env bash
-# Set up /redirect_me.
+# Configure Nginx for a 301 redirect
 
-sudo apt-get -y update
-sudo apt-get -y install nginx
+# Install Nginx if not already installed
+apt-get update -y
+apt-get install -y nginx
 
-echo "Holberton School" | sudo tee /var/www/html/index.html
+# Create a basic HTML page with the required content
+echo "Holberton School for the win!" > /var/www/html/index.html
 
-config_str="server_name _;\\
-    rewrite ^/redirect_me https://github.com/J0SHUALU/ permanent;"
-sudo sed -i "s|server_name _;|$config_str|" /etc/nginx/sites-available/default
+# Configure the redirection by adding a location block to the default config
+redirect_config="\\\tlocation /redirect_me {\n\t\treturn 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;\n\t}\n"
+sed -i "/server_name _;/a $redirect_config" /etc/nginx/sites-available/default
+# sed -i "/server_name _;/a \\\tlocation /redirect_me {\n\t\treturn 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;\n\t}\n" /etc/nginx/sites-available/default
 
-sudo nginx -t
-sudo service nginx start
+# Restart Nginx to apply changes
+service nginx restart
