@@ -1,17 +1,19 @@
 #!/usr/bin/env bash
-# Sets up nginx
+# Installs Nginx and configures it to serve a custom message
 
+# Update package lists
 sudo apt-get update -y
+
+# Install Nginx if not installed
 sudo apt-get install -y nginx
 
-# Ensure nginx is running without using systemctl
-sudo nginx
+# Ensure Nginx is started
+sudo service nginx start
 
-# Write the expected content to the index.html file
-echo "Holberton School" | sudo tee /var/www/html/index.html > /dev/null
+# Create the index.html file with the required content
+echo "Holberton School" | sudo tee /var/www/html/index.html
 
-# Allow HTTP traffic through the firewall
 sudo ufw allow 'Nginx HTTP'
 
-# Reload Nginx without using systemctl or service
-sudo nginx -s reload
+# Restart Nginx to apply changes
+sudo service nginx restart
