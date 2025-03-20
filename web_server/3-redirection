@@ -13,5 +13,5 @@ redirect_config="\\\tlocation /redirect_me {\n\t\treturn 301 https://www.youtube
 sed -i "/server_name _;/a $redirect_config" /etc/nginx/sites-available/default
 # sed -i "/server_name _;/a \\\tlocation /redirect_me {\n\t\treturn 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;\n\t}\n" /etc/nginx/sites-available/default
 
-# Restart Nginx to apply changes
+# Restart Nginx to a`pply changes
 service nginx restart
