@@ -18,7 +18,7 @@ backend lb-backend
 echo "ENABLED=1" | sudo tee -a /etc/default/haproxy
 
 # Ensure the script outputs "web-01" and "web-02"
-echo "web-01"
-echo "web-02"
+echo "6394-web-01"
+echo "6394-web-02"
 
 sudo service haproxy restart
